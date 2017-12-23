@@ -1,0 +1,27 @@
+{{ partial "head" . }}
+  <body class="startpage" style="background-image:url({{ .Site.BaseURL }}img/{{ .Site.Params.background }});">
+    <!-- Header -->
+    {{ partial "header" . }}
+    <section id="about">
+      <div class="container-fluid avatar text-center">
+        <img class="rounded-circle" style="border: 3px solid white" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Image of {{ .Site.Params.author }}">
+      </div>
+      <div class="container">
+        <div class="jumbotron">
+          <div class="central-box">
+            <h2><strong>{{ .Site.Params.author }}</strong></h2>
+            <h3>Experimental particle physicist working at CERN.
+            <h5>For further information have a look at my
+              <a href="{{ .Site.BaseURL }}posts/">posts</a>,
+              <a href="{{ .Site.BaseURL }}projects/">projects</a> or
+              <a href="{{ .Site.BaseURL }}resume/">resume</a>.
+            </h5>
+          </div>
+        </div>
+      </div>
+      {{ partial "social.html" . }}
+    </section>
+    {{ partial "footer" . }}
+  </body>
+
+</html>

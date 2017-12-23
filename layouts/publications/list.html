@@ -1,0 +1,26 @@
+{{ partial "head" . }}
+<body class="common" style="background-image:url({{ .Site.BaseURL }}img/{{ .Site.Params.background }});">
+  <!-- Header -->
+  {{ partial "header" . }}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- create some space between header and box -->
+        <div style="height:80px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      {{ range $.Site.Data.publications }}
+        {{ partial "publication.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {{ partial "footer" . }}
+</body>
+</html>

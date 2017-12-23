@@ -1,0 +1,391 @@
+/* Main page with stikky-footer */
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background-color: #000000;
+  font-family: 'Source Sans Pro', sans-serif;
+  /* The html and body elements cannot have any padding or margin. */
+  border-top: 3px solid #eaeaea;
+  padding-top: 42px;
+  /* for background image */
+  background: no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  /* Margin bottom by footer height */
+  margin-bottom: 45px;
+}
+
+/* Wrapper for page content to push down footer */
+/*#wrap {
+  padding-bottom: 50px;
+  min-height: 100%;
+  height: auto;*/
+  /* Negative indent footer by its height */
+  /*margin: 0 auto -70px;*/
+  /* Pad bottom by footer height */
+  /*padding: 0 0 65px;*/
+/*}*/
+
+.navbar {
+  background-color: #fff;
+  /*height: 45px;*/
+  border-top: 3px solid #eaeaea;
+  /*border-radius: 25px;*/
+  /*max-width: 80%;*/
+}
+
+/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  text-decoration: underline;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  text-decoration: underline;
+}*/
+
+/* Panel stuff */
+/*.panel-default h3 {
+  text-align: center;
+  line-height: 26px;
+  font-size: 24px;
+}*/
+.panel-default h1, h2, h3 {
+  text-align: center;
+  line-height: 24px;
+  font-size: 22px;
+  font-style: bold;
+}
+.panel-default h4 {
+  text-align: left;
+  line-height: 24px;
+  font-size: 20px;
+}
+.panel-default h5 {
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+}
+.panel-default h6 {
+  font-size: 15px;
+}
+.container .panel-default h4 a, h5 a {
+  color: #27A822;
+}
+.container .panel-default h4 a:hover, h5 a:hover {
+  color: #267723;
+}
+.panel{
+  border-style: none;
+}
+.panel-body {
+  padding-top: -10px;
+  text-align: left;
+}
+
+
+/* Custom page CSS */
+/*#wrap > .container {
+  padding: 60px 15px 0;
+}*/
+/*.container {
+  width: auto;
+}
+*/
+.container .central-box {
+  border-radius: 25px;
+  /* background is already given by jumbotron */
+  /* background: silver; */
+  margin: auto;
+  padding: 10px;
+  /* background: rgba(234, 234, 234, 0.8); */
+  text-align: center;
+  max-width: 90%;
+  color: black;
+}
+.container .central-box a {
+  color: black;
+  font-style: italic;
+}
+.container .central-box a:hover {
+  color: #dddddd;
+}
+/*
+.container .text-muted {
+  margin: 20px 0;
+  color: #ffffff;
+}
+.container a {
+  color: #eaeaea;
+}
+.container a:hover {
+  color: #dddddd;
+}
+*/
+
+.container .text-box {
+  border-radius: 25px;
+  /* background: silver; */
+  margin: auto;
+  padding: 10px 10px 10px 40px;
+  /* background: rgba(234, 234, 234, 0.9); */
+  text-align: left;
+  color: black;
+}
+.container .text-box a {
+  color: black;
+  font-style: italic;
+}
+.container .text-box a:hover {
+  color: #6b6666;
+}
+
+.container-fluid .text-box {
+  border-radius: 25px;
+  /* background: silver; */
+  margin: auto;
+  padding: 10px 10px 10px 40px;
+  /* background: rgba(234, 234, 234, 0.9); */
+  text-align: left;
+  color: black;
+}
+.container-fluid .text-box a {
+  color: black;
+  font-style: italic;
+}
+.container-fluid .text-box a:hover {
+  color: #6b6666;
+}
+
+
+.social-links {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  animation: fade 1s ease 1s both;
+}
+.social-links li {
+  display: inline-block;
+  padding: 5px;
+  padding-top: 0;
+  text-align: center;
+}
+.social-links li a {
+  font-size: 20px;
+  color: #ffffff;
+  padding: 10px;
+  padding-bottom: 4px;
+  transition: all .4s ease;
+}
+.social-links li a:hover {
+  text-decoration: underline;
+}
+
+
+/* Things related to the startpage */
+.avatar {
+  padding-top: 10%;
+  padding-bottom: 2%;
+}
+
+.startpage .jumbotron {
+  border-radius: 25px;
+  background: silver;
+  margin: auto;
+  padding: 10px;
+  background: rgba(234, 234, 234, 0.8);
+  text-align: center;
+  max-width: 90%;
+  color: black;
+}
+
+.startpage .central-box a {
+  color: black;
+  font-style: italic;
+}
+.startpage .central-box a:hover {
+  color: #dddddd;
+}
+
+.navbar {
+  /*background-color: #fff;*/
+  /*height: 45px;*/
+  /*border-top: 3px solid #eaeaea;*/
+  /*border-radius: 25px;*/
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  min-height:32px !important;
+  border-bottom: 3px solid #eaeaea;
+  /*max-width: 80%;*/
+}
+
+.common .navbar {
+  border-top: 3px solid #eaeaea;
+  /* border-bottom: 3px solid #eaeaea; */
+}
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:2px !important;
+    padding-bottom:6px !important;
+    height: 32px;
+}
+/*.navbar {min-height:45px !important;}*/
+
+.common .jumbotron {
+  /* border-top-left-radius: 25px;
+  border-top-right-radius: 25px; */
+  border-radius: 25px;
+  background: white;
+  margin: auto;
+  padding: 10px;
+  background: rgba(234, 234, 234, 0.8);
+  text-align: left;
+  max-width: 90%;
+  color: black;
+  padding-bottom:50px;
+}
+
+/*
+.me {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    margin-bottom: 20px;
+}
+*/
+.blog-post{
+  padding-top: 15px;
+}
+.blog-title{
+  padding-top: 2px;
+}
+.blog-title h4 {
+  text-align: center;
+  line-height: 24px;
+  font-size: 20px;
+}
+
+.related-posts h4 {
+  text-align: center;
+}
+.page-not-found {
+  padding-top: 20%;
+}
+.disqus {
+  padding-bottom: 15px;
+}
+.blogpost{
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+/* Resume */
+/*header > h1, section > h1 {
+    color: #27A822;
+}
+section {
+    margin-bottom: 20px;
+}
+
+section > h1 {
+    font-size: 140%;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+article {
+    margin-bottom: 20px;
+}
+
+article > header > h1 {
+    font-size: 112%;
+    font-weight: bold;
+    line-height: 150%;
+    margin-bottom: 0;
+    color: inherit;
+}
+
+article > header > span + span {
+    margin-left: 2px;
+}
+
+article > header > span + span::before {
+    content: '@';
+    margin-right: 4px;
+}
+
+article > header > span {
+    color: #808080;
+    font-size: 100%;
+}
+
+article > header > span a {
+    color: inherit;
+}
+
+article > header address {
+    display: inline;
+}
+
+article > header address + time {
+    margin-left: 6px;
+}
+
+article > header address + time::before {
+    content: '—';
+    margin-right: 6px;
+}*/
+
+/*em {
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(100, 100, 100);*/
+    /*margin-right: 6px;*/
+/*}*/
+
+/* Footer  */
+/* define one for the startpage where the footer should be at the bottom of the page
+and one for the other pages where the footer appears at the end of the content */
+.startpage .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 45px;
+  line-height: 45px; /* Vertically center the text there */
+  /*background-color: #f5f5f5;*/
+  color: #ffffff;
+}
+
+.startpage .footer a {
+	color: #cecece;
+}
+
+/*.footer {
+  text-decoration: none !important;
+}*/
+
+.common .footer {
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 45px;
+  line-height: 45px; /* Vertically center the text there */
+  /*background-color: #f5f5f5;*/
+  color: #ffffff;
+  float:left;
+}
+
+.common .footer a {
+	color: #cecece;
+}
+
+/* Footer line doesn't seem to work properly in mobile view when line breaks */
+/*div.footer{
+  border-bottom: 5px solid #eaeaea;
+}*/

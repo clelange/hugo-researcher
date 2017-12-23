@@ -1,0 +1,44 @@
+<div class="text-box">
+  <div class="row">
+    <div class="col-sm-12 align-self-center">
+      <h3>{{ .name }}</h3>
+      <div style="height:20px;"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- panel is just for text style formatting -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+        {{ range $item := .items }}
+        <ul>
+          <li>{{ if $item.collaboration }}
+                {{ $item.collaboration }} Collaboration,
+              {{ else }}
+              {{ print $item.author -}},
+              {{ end }}
+              <b>"{{ print $item.title }},"</b>
+              {{ if $item.journal }}
+                <em>{{ print $item.journal }}</em>
+                {{ if $item.volume }}
+                  <b>{{ print $item.volume }}</b>
+                  {{ end -}}
+                ({{ print $item.year }})
+                {{- if $item.pages }}
+                  {{ print (strings.TrimRight "-" $item.pages) -}}
+                {{- end -}}
+              {{ end -}}
+              {{ if $item.doi }},
+                <a href="http://dx.doi.org/{{ print $item.doi }}">doi:{{ print $item.doi -}}</a>
+              {{- end -}}
+              {{- if $item.eprint -}},
+                <a href="https://arxiv.org/abs/{{ $item.eprint }}">{{ $item.archiveprefix }}:{{ $item.eprint -}}</a>
+              {{- end -}}.
+          </li>
+        </ul>
+        {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

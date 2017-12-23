@@ -1,0 +1,12 @@
+name = "Researcher"
+license = "MIT"
+licenselink = "https://github.com/clelange/hugo-researcher/blob/master/LICENSE.md"
+description = "Homepage for researchers built with Bootstrap, powered by Hugo"
+homepage = "https://github.com/clelange/hugo-sustain"
+tags = ["blog", "minimal", "responsive"]
+features = ["responsive", "syntax highlighting"]
+min_version = 0.1
+
+[author]
+  name = "Clemens Lange"
+  homepage = "https://clelange.github.io"

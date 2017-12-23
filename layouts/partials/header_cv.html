@@ -1,0 +1,23 @@
+<header>
+  <img class="me" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
+  <h1>{{ .Site.Params.author }}</h1>
+  <!-- <p>
+    <a href="tel:{{ .Site.Params.tel_full }}">{{ .Site.Params.tel }}</a>
+  </p> -->
+  <address>
+    <a href="{{ .Site.Params.address.google_maps }}">
+      {{ .Site.Params.address.address }}<br/>
+      {{ .Site.Params.address.postcode }}<br/>
+      {{ .Site.Params.address.city }}<br/>
+      {{ .Site.Params.address.country }}
+    </a>
+  </address>
+  <p>
+    <a href="{{ .Site.BaseURL }}">{{ .Site.Params.website }}</a><br/>
+  </p>
+  <p>
+    <a href="mailto:{{ .Site.Params.Social.Email }}">{{ .Site.Params.Social.Email }}</a><br/>
+    <a href="http://github.com/{{ .Site.Params.Social.Github }}"><i class="fa fa-github"></i>&nbsp;Github</a> /
+    <a href="http://twitter.com/{{ .Site.Params.Social.Twitter }}"><i class="fa fa-twitter"></i>&nbsp;Twitter</a>
+  </p>
+</header>

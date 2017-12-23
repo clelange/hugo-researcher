@@ -1,0 +1,30 @@
+    <section id="projects">
+      <div class="container-fluid">
+      <!-- <div class="text-box"> -->
+        <div class="row">
+          <div class="col-sm-12 align-self-center">
+            <div class="jumbotron">
+              <div class="text-box">
+                <h3 class="panel-default">{{ .Site.Data.projects.name }}</h3>
+                <div style="height:20px;"></div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <!-- <div class="panel panel-default">
+                      <div class="panel-body"> -->
+                    {{ range $i, $el := .Site.Data.projects.source }}
+                    <h5>
+                      <i class="{{ .icon }}"></i>&nbsp;&nbsp;
+                      <strong><a href="{{ $el.link }}">{{ $el.title }}</a></strong>&nbsp;-&nbsp;{{ $el.description }}
+                    </h5>
+                    {{ end }}
+                      <!-- </div>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </section>

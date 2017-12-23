@@ -1,0 +1,88 @@
+{{ partial "head" . }}
+  <body class="common" style="background-image:url({{ .Site.BaseURL }}img/{{ .Site.Params.background }});">
+    <!-- Header -->
+    {{ partial "header" . }}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+            <!-- create some space between header and box -->
+            <div style="height:80px;"></div>
+          </div>
+      </div>
+    </div>
+
+    {{ if isset .Params "showpagemeta" }}
+      {{ .Render "projects" }}
+    {{ else }}
+    <!-- Print individual blog post -->
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <div class="text-box">
+          <div class="row">
+            <div class="col-sm-12 align-self-center">
+              <div class="blog-post">
+                <h3>
+                  <strong><a href="{{ .Permalink }}">{{ .Title }}</a></strong>
+                </h3>
+              </div>
+            </div>
+          </div> <!--end row-->
+        </div> <!--end textbox-->
+        <div class="row">
+          <div class="col-sm-12 align-self-center">
+            <div class="blog-title">
+              <h4>
+                {{ .Date.Format "2 January 2006" }}
+                &nbsp;&nbsp;
+                {{ if isset .Params "tags"}}
+                  <i class="fa fa-tags"></i>
+                  {{ range .Params.tags }}
+                    <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="label label-primary">{{ . }}</a>
+                  {{ end }}
+                {{ end }}
+              </h4>
+            </div>
+          </div>
+        </div>  <!--end row-->
+        <div class="row">
+            <div class="col-sm-12 align-self-center">
+            <div style="height:20px;"></div>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="blogpost">
+                {{ .Content }}
+                <hr>
+                <div class="related-posts">
+                  <h5>Related Posts</h5>
+                  {{ range first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <h6 style="text-align: right">
+                          {{ .Date.Format "January 2, 2006" }}
+                        </h6>
+                      </div>
+                      <div class="col-sm-8">
+                        <h6 style="text-align: left">
+                          <strong><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></strong>
+                        </h6>
+                      </div>
+                    </div> <!--end row-->
+                  {{ end }}
+                </div>  <!--end related posts-->
+              </div>  <!--end blogpost-->
+            </div>  <!--end panel-body-->
+            <hr>
+          <!-- {{ partial "disqus" . }} -->
+          </div>  <!--end panel-->
+        </div>  <!--end row-->
+        </div>  <!--end row-->
+      {{ end }}
+      </div>  <!--end jumbotron-->
+    </div>  <!--end container-fluid-->
+
+    <!-- Footer -->
+    {{ partial "footer" . }}
+
+  </body>
+</html>

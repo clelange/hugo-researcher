@@ -1,0 +1,17 @@
+<nav class="navbar fixed-top navbar-expand-sm navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}"><i class="fa fa-home"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="nav navbar-nav navbar-right">
+        {{ if .Site.Menus.main }}
+          {{ range sort .Site.Menus.main }}
+          <li class="nav-item"><a class="nav-link" href="{{ .URL }}">{{ .Name | upper }}</a></li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

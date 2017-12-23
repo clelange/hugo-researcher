@@ -1,0 +1,53 @@
+{{ partial "head" . }}
+<body class="common" style="background-image:url({{ .Site.BaseURL }}img/{{ .Site.Params.background }});">
+  <!-- Header -->
+  {{ partial "header" . }}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- create some space between header and box -->
+        <div style="height:80px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="text-box">
+        <div class="row">
+          <div class="col-sm-12 align-self-center">
+            <h3>Posts</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <!-- panel is just for text style formatting -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                {{ range .Data.Pages.ByPublishDate.Reverse }}
+                  <div class="row">
+                    <div class="col-sm-4 col-md-2 col-xl-2">
+                      <h5 style="text-align: right">
+                        {{ .Date.Format "02 Jan 06" }}
+                      </h5>
+                    </div>
+                    <div class="col-sm-8 col-md-10 col-xl-10">
+                      <h5 style="text-align: left">
+                        <strong><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></strong>
+                      </h5>
+                    </div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {{ partial "footer" . }}
+</body>
+</html>

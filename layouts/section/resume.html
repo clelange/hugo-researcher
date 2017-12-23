@@ -1,0 +1,35 @@
+{{ partial "head" . }}
+  <body>
+
+    <div id="wrap">
+
+      <!-- Header -->
+      {{ partial "header" . }}
+
+      <div class="container">
+        <div class="row">
+          <div style="height:50px;"></div>
+        </div>
+      </div>
+  <div class="container central-box">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          {{ partial "header_cv" . }}
+        </div>
+        <div class="col-9">
+          {{ partial "employment" . }}
+          {{ partial "education" . }}
+          {{ partial "skills" . }}
+          {{ partial "initiatives" . }}
+          {{ partial "hobbies" . }}
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+            {{ partial "footer" . }}
+  </body>
+</html>
