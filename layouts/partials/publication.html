@@ -27,6 +27,10 @@
                 {{- if $item.pages }}
                   {{ print (strings.TrimRight "-" $item.pages) -}}
                 {{- end -}}
+              {{ else }}
+                {{ if $item.note }}
+                  {{ print $item.note }}
+                {{- end -}}
               {{ end -}}
               {{ if $item.doi }},
                 <a href="http://dx.doi.org/{{ print $item.doi }}">doi:{{ print $item.doi -}}</a>
