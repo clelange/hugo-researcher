@@ -33,7 +33,7 @@
           <div class="col-sm-12 align-self-center">
             <div class="blog-title">
               <h4>
-                {{ .Date.Format "2 January 2006" }}
+                {{ .Date.Format "2 January 2006" }}{{ if ne .PublishDate .Lastmod }}, last updated {{ .Lastmod.Format "2 January 2006" }}{{ end }}
                 &nbsp;&nbsp;
                 {{ if isset .Params "tags"}}
                   <i class="fa fa-tags"></i>
